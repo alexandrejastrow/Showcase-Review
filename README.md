@@ -18,12 +18,6 @@
 
 <a href="">Back End</a>
 
-
-
-### Front-end
-
-<a href="#">Front End</a>
-
 ### Autor
 
 <img alt="Alexandre jastrow" title="Alexandre jastrow" src="https://avatars.githubusercontent.com/u/52933958?v=4" height="100" width="100" />
