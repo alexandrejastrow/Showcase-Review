@@ -9,9 +9,6 @@
 <p>Instituto Federal de Educação, Ciência e Tecnologia do Espírito Santo</p>
 
 
-### Requirements Gathering
-
-<a href="https://github.com/alexandrejastrow/Showcase-Review/blob/main/systemRequirements/Showcase%20Review.pdf"> Document PDF</a>
 
 
 ### Autor
