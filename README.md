@@ -14,10 +14,6 @@
 <a href="https://github.com/alexandrejastrow/Showcase-Review/blob/main/systemRequirements/Showcase%20Review.pdf"> Document PDF</a>
 
 
-### Back-end:
-
-<a href="">Back End</a>
-
 ### Autor
 
 <img alt="Alexandre jastrow" title="Alexandre jastrow" src="https://avatars.githubusercontent.com/u/52933958?v=4" height="100" width="100" />
