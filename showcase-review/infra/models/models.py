@@ -1,8 +1,8 @@
-from sqlalchemy import Boolean, Column, ForeignKey, Integer, String
+from sqlalchemy import Boolean, Column, ForeignKey, Integer, String, DateTime
 from sqlalchemy.orm import relationship
+from sqlalchemy.sql import func
 
 from ..database import Base
-
 
 class User(Base):
 
@@ -12,10 +12,14 @@ class User(Base):
     username = Column(String, nullable=False)
     email = Column(String, unique=True, nullable=False)
     hashed_password = Column(String)
-    is_active = Column(Boolean, default=True)
+    is_active = Column(Boolean, default=False)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
 
-    items = relationship("Item", back_populates="owner")
+    posts = relationship("Post", back_populates="user")
 
+    def __str__(self) -> str:
+        return f'users: {self.username}'
 
 class Post(Base):
     __tablename__ = "posts"
@@ -24,6 +28,11 @@ class Post(Base):
     title = Column(String, nullable=False)
     description = Column(String, nullable=False)
     text = Column(String, nullable=False)
-    user_id = Column(Integer, ForeignKey("users.id"))
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
 
+    user_id = Column(Integer, ForeignKey("users.id"))
     user = relationship("User", back_populates="posts")
+
+    def __str__(self) -> str:
+        return f'post: {self.title}'
