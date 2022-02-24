@@ -10,6 +10,8 @@ python = "^3.10"
 fastapi = "^0.74.0"
 uvicorn = {extras = ["standard"], version = "^0.17.5"}
 SQLAlchemy = "^1.4.31"
+psycopg2-binary = "^2.9.3"
+passlib = "^1.7.4"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^4.0.1"
