@@ -5,6 +5,7 @@ from .infra.models import models
 from sqlalchemy.orm import Session
 from .services.UserService import UserService
 from .schemas import schemas
+from fastapi.responses import RedirectResponse
 
 models.Base.metadata.create_all(bind=engine)
 
@@ -19,7 +20,9 @@ app.add_middleware(
     allow_headers=["*"]
 )
 
-
+@app.get("/")
+async def home():
+    return RedirectResponse("/docs")
 
 @app.post("/users", response_model=schemas.User)
 async def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
